@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import RelatedBeers from './RelatedBeers'
+import React, { Component } from "react"
+import RelatedBeers from "./RelatedBeers"
 
 class BeerCardComplete extends Component {
     constructor(){
@@ -7,9 +7,11 @@ class BeerCardComplete extends Component {
         this.state = {loading: false};
     }
     
-    componentWillMount = () => {
-        this.setState({loading: true});
-        fetch('https://api.punkapi.com/v2/beers/' + this.props.id).then(resp => {
+    componentDidMount = () => {
+        this.setState({
+            loading: true
+        });
+        fetch("https://api.punkapi.com/v2/beers/" + this.props.id).then(resp => {
             return resp.json();
         }).then(data => {
             this.setState({
@@ -30,12 +32,15 @@ class BeerCardComplete extends Component {
     
     render(){
         return (
-            
             <div className="component beer-card-complete">
             <div className="row">
-            {this.state.loading && <div className="loader"><h2>Loading...</h2></div>}
+            {this.state.loading && 
+                <div className="loader">
+                    <h2>Loading...</h2>
+                </div>
+            }
             <div className="big-image col-sm-4">
-                    <img src={this.state.image_url} alt={'image of ' + this.state.name}/>
+                    <img src={this.state.image_url} alt={"image of " + this.state.name}/>
             </div>
             <div className="description-container col-sm-8">
                 <h3>{this.state.name}</h3>

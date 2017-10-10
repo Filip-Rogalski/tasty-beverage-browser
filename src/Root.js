@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
 class Root extends Component {
   render() {
@@ -6,7 +6,7 @@ class Root extends Component {
       <div className="container">
         {this.props.children}
       </div>
-    )
+    );
   }
 }
 

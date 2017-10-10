@@ -1058,31 +1058,31 @@ body {
   margin: 0; }
 
 @font-face {
-  font-family: 'ralewaybold';
+  font-family: "ralewaybold";
   src: url("../fonts/raleway-bold-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
-  font-family: 'ralewayregular';
+  font-family: "ralewayregular";
   src: url("../fonts/raleway-regular-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
-  font-family: 'ralewaythin';
+  font-family: "ralewaythin";
   src: url("../fonts/raleway-thin-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal; }
 
 .beer-card .inner-wrapper:after, .beer-card-complete .parameters-container:after {
-  content: '';
+  content: "";
   display: block;
   clear: both; }
 
 body {
   background-color: #dedede;
-  font-family: 'ralewayregular', sans-serif; }
+  font-family: "ralewayregular", sans-serif; }
 
 * {
   text-decoration: none;
@@ -1105,13 +1105,13 @@ body {
 
 h1, h3 {
   color: #ffc300;
-  font-family: 'ralewaybold', sans-serif; }
+  font-family: "ralewaybold", sans-serif; }
 
 .dark-header {
   color: #737373; }
 
 .tag-line {
-  font-family: 'ralewaythin', 'Arial', sans-serif; }
+  font-family: "ralewaythin", "Arial", sans-serif; }
 
 img {
   display: block;
@@ -1199,7 +1199,7 @@ img {
     .beer-card-complete .parameters span {
       margin-right: 5px; }
     .beer-card-complete .parameters .label {
-      font-family: 'ralewaybold', 'Arial', sans-serif;
+      font-family: "ralewaybold", "Arial", sans-serif;
       text-transform: uppercase;
       font-weight: bold; }
   .beer-card-complete .loader {

@@ -1,22 +1,22 @@
-@import 'bootstrap-grid';
-@import 'reset';
+@import "bootstrap-grid";
+@import "reset";
 
 @font-face {
-  font-family: 'ralewaybold';
+  font-family: "ralewaybold";
   src: url("../fonts/raleway-bold-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'ralewayregular';
+  font-family: "ralewayregular";
   src: url("../fonts/raleway-regular-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'ralewaythin';
+  font-family: "ralewaythin";
   src: url("../fonts/raleway-thin-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
@@ -24,7 +24,7 @@
 
 %clearfix {
     &:after {
-        content: '';
+        content: "";
         display: block;
         clear: both;
     }
@@ -32,7 +32,7 @@
 
 body {
     background-color: rgb(222, 222, 222);
-    font-family: 'ralewayregular', sans-serif;
+    font-family: "ralewayregular", sans-serif;
 }
 
 * {
@@ -51,7 +51,6 @@ body {
     }
 }
 
-
 .row {
     @media (max-width: 767px) {
         padding: 0;
@@ -61,7 +60,7 @@ body {
 
 h1, h3 {
     color: rgb(255, 195, 0);
-    font-family: 'ralewaybold', sans-serif;
+    font-family: "ralewaybold", sans-serif;
 }
 
 .dark-header {
@@ -69,7 +68,7 @@ h1, h3 {
 }
 
 .tag-line {
-    font-family: 'ralewaythin', 'Arial', sans-serif;
+    font-family: "ralewaythin", "Arial", sans-serif;
 }
 
 img {
@@ -203,7 +202,7 @@ img {
         }
 
         .label {
-            font-family: 'ralewaybold', 'Arial', sans-serif;
+            font-family: "ralewaybold", "Arial", sans-serif;
             text-transform: uppercase;
             font-weight: bold;
         }

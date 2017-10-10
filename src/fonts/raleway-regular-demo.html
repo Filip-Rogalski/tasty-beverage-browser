@@ -11,7 +11,7 @@
 
 	<style type="text/css">
 					body{
-				font-family: 'ralewayregular';
+				font-family: "ralewayregular";
 							}
 		</style>
 
@@ -20,7 +20,7 @@
 	
 	<script type="text/javascript" charset="utf-8">
 		$(document).ready(function() {
-			$('#container').easyTabs({defaultContent:1});
+			$("#container").easyTabs({defaultContent:1});
 		});
 	</script>
 </head>
@@ -555,24 +555,24 @@
 
 <code>
 @font-face{ 
-	font-family: 'MyWebFont';
-	src: url('WebFont.eot');
-	src: url('WebFont.eot?#iefix') format('embedded-opentype'),
-	     url('WebFont.woff') format('woff'),
-	     url('WebFont.ttf') format('truetype'),
-	     url('WebFont.svg#webfont') format('svg');
+	font-family: "MyWebFont";
+	src: url("WebFont.eot");
+	src: url("WebFont.eot?#iefix") format("embedded-opentype"),
+	     url("WebFont.woff") format("woff"),
+	     url("WebFont.ttf") format("truetype"),
+	     url("WebFont.svg#webfont") format("svg");
 }
 </code>
 
-	<p>We've already gone ahead and generated the code for you. All you have to do is link to the stylesheet in your HTML, like this:</p>
+	<p>We"ve already gone ahead and generated the code for you. All you have to do is link to the stylesheet in your HTML, like this:</p>
 	<code>&lt;link rel=&quot;stylesheet&quot; href=&quot;stylesheet.css&quot; type=&quot;text/css&quot; charset=&quot;utf-8&quot; /&gt;</code>
 
 					<h2>3. Modify your own stylesheet</h2>
 					<p>To take advantage of your new fonts, you must tell your stylesheet to use them. Look at the original @font-face declaration above and find the property called "font-family." The name linked there will be what you use to reference the font. Prepend that webfont name to the font stack in the "font-family" property, inside the selector you want to change. For example:</p>
-<code>p { font-family: 'WebFont', Arial, sans-serif; }</code>
+<code>p { font-family: "WebFont", Arial, sans-serif; }</code>
 
 <h2>4. Test</h2>
-<p>Getting webfonts to work cross-browser <em>can</em> be tricky. Use the information in the sidebar to help you if you find that fonts aren't loading in a particular browser.</p>
+<p>Getting webfonts to work cross-browser <em>can</em> be tricky. Use the information in the sidebar to help you if you find that fonts aren"t loading in a particular browser.</p>
 				</div>
 				
 				<div class="grid5 sidebar">
@@ -582,7 +582,7 @@
 
 						<h3>Fonts not showing in any browser</h3>
 
-						<p>This sounds like you need to work on the plumbing. You either did not upload the fonts to the correct directory, or you did not link the fonts properly in the CSS. If you've confirmed that all this is correct and you still have a problem, take a look at your .htaccess file and see if requests are getting intercepted.</p>
+						<p>This sounds like you need to work on the plumbing. You either did not upload the fonts to the correct directory, or you did not link the fonts properly in the CSS. If you"ve confirmed that all this is correct and you still have a problem, take a look at your .htaccess file and see if requests are getting intercepted.</p>
 
 						<h3>Fonts not loading in iPhone or iPad</h3>
 
@@ -590,7 +590,7 @@
 
 						<h3>Fonts not loading in Firefox</h3>
 
-						<p>The primary reason for this failure? You are still using a version Firefox older than 3.5. So upgrade already! If that isn't it, then you are very likely serving fonts from a different domain. Firefox requires that all font assets be served from the same domain. Lastly it is possible that you need to add WOFF to your list of MIME types (if you are serving via IIS.)</p>
+						<p>The primary reason for this failure? You are still using a version Firefox older than 3.5. So upgrade already! If that isn"t it, then you are very likely serving fonts from a different domain. Firefox requires that all font assets be served from the same domain. Lastly it is possible that you need to add WOFF to your list of MIME types (if you are serving via IIS.)</p>
 
 						<h3>Fonts not loading in IE</h3>
 

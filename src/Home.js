@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import BeerCard from './BeerCard'
+import React, { Component } from "react"
+import BeerCard from "./BeerCard"
 
-import './style/index.css'
+import "./style/index.css"
 
 class Home extends Component {
     constructor(){
@@ -13,7 +13,7 @@ class Home extends Component {
         this.setState({
             loading: true
         });
-        fetch('https://api.punkapi.com/v2/beers?page=1&per_page=20').then(resp => {
+        fetch("https://api.punkapi.com/v2/beers?page=1&per_page=20").then(resp => {
             return resp.json();
         }).then(data => {
             this.setState({
@@ -21,7 +21,7 @@ class Home extends Component {
                 loading: false
             });
         });
-        window.addEventListener('scroll', this.handleScroll);
+        window.addEventListener("scroll", this.handleScroll);
     }
         
     handleScroll = () => {
@@ -33,7 +33,7 @@ class Home extends Component {
         if (windowBottom >= docHeight) {
             let page = this.state.page + 1;
             this.setState({loading: true});
-            fetch('https://api.punkapi.com/v2/beers?page=' + page + '&per_page=20').then(resp => {
+            fetch("https://api.punkapi.com/v2/beers?page=" + page + "&per_page=20").then(resp => {
                 return resp.json();
             }).then(data => {
                 let beers = this.state.beers;
@@ -44,12 +44,10 @@ class Home extends Component {
                     loading: false
                 });
                 if (data.length < 20) {
-                    window.removeEventListener('scroll', this.handleScroll);
+                    window.removeEventListener("scroll", this.handleScroll);
                     this.setState({endOfList: true});
                 }
             });
-        } else {
-            console.log('scrolling');
         }
     }
     

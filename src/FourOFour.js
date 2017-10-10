@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
 class FourOFour extends Component {
     render(){
@@ -7,7 +7,5 @@ class FourOFour extends Component {
         );
     }
 }
-
-
 
 export default FourOFour;

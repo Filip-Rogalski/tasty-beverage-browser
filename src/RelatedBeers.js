@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from "react"
 
 class RelatedBeers extends Component {
     constructor(){
@@ -6,21 +6,21 @@ class RelatedBeers extends Component {
         this.state = {beers: []}
     }
     
-    componentWillMount = () => {
+    componentDidMount = () => {
         
         //Compose GET query according to passed parameters:
         
         let first = 0,
-            abv = '',
-            ibu = '',
-            ebc = '';
+            abv = "",
+            ibu = "",
+            ebc = "";
         
         if (this.props.abv) {
             let abv_g = Math.max(Math.floor(this.props.abv) - 2, 0),
                 abv_l = Math.floor(this.props.abv) + 3;
 
             first = 1;
-            abv = '?abv_gt=' + abv_g + '&abv_lt=' + abv_l;
+            abv = "?abv_gt=" + abv_g + "&abv_lt=" + abv_l;
         }
         
         if (this.props.ibu) {
@@ -30,12 +30,12 @@ class RelatedBeers extends Component {
             
             if (first === 0) {
                 first = 1;
-                starter = '?';
+                starter = "?";
             } else {
-                starter = '&';
+                starter = "&";
             }
             
-            ibu = starter + 'ibu_gt=' + ibu_g + '&ibu_lt=' + ibu_l;
+            ibu = starter + "ibu_gt=" + ibu_g + "&ibu_lt=" + ibu_l;
         }
         
         if (this.props.ebc) {
@@ -45,15 +45,15 @@ class RelatedBeers extends Component {
             
             if (first === 0) {
                 first = 1;
-                starter = '?';
+                starter = "?";
             } else {
-                starter = '&';
+                starter = "&";
             }
             
-            ebc = starter + 'ebc_gt=' + ebc_g + '&ebc_lt=' + ebc_l;
+            ebc = starter + "ebc_gt=" + ebc_g + "&ebc_lt=" + ebc_l;
         }
             
-        fetch('https://api.punkapi.com/v2/beers' + abv + ibu + ebc).then(resp => {
+        fetch("https://api.punkapi.com/v2/beers" + abv + ibu + ebc).then(resp => {
             return resp.json();
         }).then(data => {
             
@@ -79,7 +79,7 @@ class RelatedBeers extends Component {
             <div className="related-beer col-sm-12" key={beer.id}>
             <div className="wrapper">
                 <div className="beer-image">
-                    <img src={beer.image_url} alt={'image of ' + beer.name}/>
+                    <img src={beer.image_url} alt={"image of " + beer.name}/>
                 </div>
                 <h3>{beer.name}</h3>
             </div>
