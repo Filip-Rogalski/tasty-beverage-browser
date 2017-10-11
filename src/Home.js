@@ -25,10 +25,15 @@ class Home extends Component {
     }
         
     disableScrolling = () => {
-        //finish
+        //when modal is visible, app stops fetching new data on scrolling
+        window.removeEventListener("scroll", this.handleScroll);
+        
+        //how to disable background scrolling???
     }
     
     enableScrolling = () => {
+        //upon modal hide, fetching new data on scrolling is enabled
+        window.addEventListener("scroll", this.handleScroll);
         //finish
     }
     
@@ -81,7 +86,7 @@ class Home extends Component {
     
     render(){
         return (
-            <div>
+            <div ref="mainContainer">
                 {this.state.modalVisible && <Modal modalRef={this.state.modalRef} hideModal={this.hideModal}/>}
             <div className="container">
                 <div className="row">
