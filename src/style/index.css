@@ -1236,3 +1236,16 @@ img {
   .col-md-102 {
     width: 20%;
     float: left; } }
+
+.modal {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(100, 100, 100, 0.5);
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 3; }
+  .modal .modal-wrapper {
+    margin: 20px auto;
+    width: 80%;
+    height: 80vh; }

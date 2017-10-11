@@ -1,12 +1,12 @@
 import React, { Component } from "react"
-import BeerCard from "./BeerCard"
-
+import BeerCard from "./BeerCard_1"
+import Modal from "./Modal"
 import "./style/index.css"
 
 class Home extends Component {
     constructor(){
         super();
-        this.state = {beers: [], scroll: 0, page: 1, endOfList: false, loading: false}
+        this.state = {beers: [], scroll: 0, page: 1, endOfList: false, loading: false, modalRef: 1, modalVisible: false}
     }
     
     componentDidMount = () => {
@@ -24,6 +24,34 @@ class Home extends Component {
         window.addEventListener("scroll", this.handleScroll);
     }
         
+    disableScrolling = () => {
+        //finish
+    }
+    
+    enableScrolling = () => {
+        //finish
+    }
+    
+    showModal = () => {
+        this.disableScrolling();
+        this.setState({
+            modalVisible: true
+        });
+    }
+    
+    hideModal = () => {
+        this.enableScrolling();
+        this.setState({
+            modalVisible: false
+        });
+    }
+    
+    setModalRef = (id) => {
+        this.setState({
+            modalRef: id
+        });
+    }
+    
     handleScroll = () => {
         let windowHeight = "innerHeight" in window ? window.innerHeight : document.documentElement.offsetHeight;
         let  body = document.body;
@@ -53,6 +81,8 @@ class Home extends Component {
     
     render(){
         return (
+            <div>
+                {this.state.modalVisible && <Modal modalRef={this.state.modalRef} hideModal={this.hideModal}/>}
             <div className="container">
                 <div className="row">
                     <div className="col col-6">
@@ -61,14 +91,22 @@ class Home extends Component {
                 </div>
                 <div className="row">
                     {this.state.beers.map(beer => (
-                        <BeerCard key={beer.id} beer={beer} handler={this.showInfo}/>
+                     <div key={beer.id} id={beer.id} className="beer-card col-md-102" onClick={() => {
+                            this.setModalRef(beer.id);
+                            this.showModal();
+                        }
+                    }>
+                        <BeerCard beer={beer} />
+                     </div>
                     ))}
                     {this.state.endOfList && 
                     <div className="col col-12">
                         <h1>No more beers to show :(</h1>
                     </div>}
                 </div>
+                
                 {this.state.loading && <div className="loader"><h2>Loading...</h2></div>}
+            </div>
             </div>
         );
     }
