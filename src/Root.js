@@ -1,10 +1,10 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 class Root extends Component {
   render() {
     return (
     <div>
-      <div className="container">
+      <div className='container full-height'>
         {this.props.children}
       </div>
     </div>

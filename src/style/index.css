@@ -1249,3 +1249,6 @@ img {
     margin: 20px auto;
     width: 80%;
     height: 80vh; }
+
+.full-height {
+  min-height: 100vh; }

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 class BeerCard extends Component {
     render(){
@@ -6,7 +6,7 @@ class BeerCard extends Component {
             
             <div data-id={this.props.beer.id} onClick={this.props.handler}><div className="inner-wrapper">
                 <div className="beer-image">
-                    <img src={this.props.beer.image_url} alt={"image of " + this.props.beer.name}/>
+                    <img src={this.props.beer.image_url} alt={'image of ' + this.props.beer.name}/>
                 </div>
                 <div className="beer-labels">
                 <h3>{this.props.beer.name}</h3>

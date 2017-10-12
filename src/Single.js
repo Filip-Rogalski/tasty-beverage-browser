@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import BeerCardComplete from "./BeerCardComplete";
-import FourOFour from "./FourOFour";
+import React, { Component } from 'react';
+import BeerCardComplete from './BeerCardComplete';
+import FourOFour from './FourOFour';
 
 class Single extends Component {
     render(){

@@ -1,11 +1,11 @@
-import React, { Component } from "react";
-import ReactDOM from "react-dom";
-import { Router, Route, IndexRoute, browserHistory } from "react-router";
-import Root from "./Root";
-import Home from "./Home";
-import Single from "./Single";
-import FourOFour from "./FourOFour";
-import "./style/index.css";
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import { Router, Route, IndexRoute, browserHistory } from 'react-router';
+import Root from './Root';
+import Home from './Home';
+import Single from './Single';
+import FourOFour from './FourOFour';
+import './style/index.css';
 
 class App extends Component {
     render(){
@@ -21,5 +21,4 @@ class App extends Component {
     }
 }
 
-
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById('root'));

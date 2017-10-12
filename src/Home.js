@@ -1,12 +1,20 @@
-import React, { Component } from "react"
-import BeerCard from "./BeerCard_1"
-import Modal from "./Modal"
-import "./style/index.css"
+import React, { Component } from "react";
+import BeerCard from "./BeerCard_1";
+import Modal from "./Modal";
+import './style/index.css';
 
 class Home extends Component {
     constructor(){
         super();
-        this.state = {beers: [], scroll: 0, page: 1, endOfList: false, loading: false, modalRef: 1, modalVisible: false}
+        this.state = {
+            beers: [], 
+            scroll: 0, 
+            page: 1, 
+            endOfList: false, 
+            loading: false, 
+            modalRef: 1, 
+            modalVisible: false
+        }
     }
     
     componentDidMount = () => {
@@ -58,19 +66,21 @@ class Home extends Component {
     }
     
     handleScroll = () => {
-        let windowHeight = "innerHeight" in window ? window.innerHeight : document.documentElement.offsetHeight;
-        let  body = document.body;
-        let  html = document.documentElement;
-        let  docHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight,  html.scrollHeight, html.offsetHeight);
-        let windowBottom = windowHeight + window.pageYOffset;
+        let windowHeight = "innerHeight" in window ? window.innerHeight : document.documentElement.offsetHeight,
+            body = document.body,
+            html = document.documentElement,
+            docHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight,  html.scrollHeight, html.offsetHeight),
+            windowBottom = windowHeight + window.pageYOffset;
         if (windowBottom >= docHeight) {
             let page = this.state.page + 1;
-            this.setState({loading: true});
+            this.setState({
+                loading: true
+            });
             fetch("https://api.punkapi.com/v2/beers?page=" + page + "&per_page=20").then(resp => {
                 return resp.json();
             }).then(data => {
-                let beers = this.state.beers;
-                let updatedBeers = beers.concat(data);
+                let beers = this.state.beers,
+                    updatedBeers = beers.concat(data);
                 this.setState({
                     beers: updatedBeers,
                     page: page,
@@ -78,7 +88,9 @@ class Home extends Component {
                 });
                 if (data.length < 20) {
                     window.removeEventListener("scroll", this.handleScroll);
-                    this.setState({endOfList: true});
+                    this.setState({
+                        endOfList: true
+                    });
                 }
             });
         }
@@ -86,9 +98,11 @@ class Home extends Component {
     
     render(){
         return (
-            <div ref="mainContainer">
-                {this.state.modalVisible && <Modal modalRef={this.state.modalRef} hideModal={this.hideModal}/>}
-            <div className="container">
+            <div>
+                {this.state.modalVisible && 
+                    <Modal modalRef={this.state.modalRef} hideModal={this.hideModal} />
+                }
+            <div className="container full-height">
                 <div className="row">
                     <div className="col col-6">
                     <h1>Beer<span className="dark-header">guru</span></h1>
@@ -99,18 +113,22 @@ class Home extends Component {
                      <div key={beer.id} id={beer.id} className="beer-card col-md-102" onClick={() => {
                             this.setModalRef(beer.id);
                             this.showModal();
-                        }
-                    }>
+                        }}>
                         <BeerCard beer={beer} />
                      </div>
                     ))}
                     {this.state.endOfList && 
-                    <div className="col col-12">
-                        <h1>No more beers to show :(</h1>
-                    </div>}
+                        <div className="col col-12">
+                            <h1>No more beers to show :(</h1>
+                        </div>
+                    }
                 </div>
                 
-                {this.state.loading && <div className="loader"><h2>Loading...</h2></div>}
+                {this.state.loading && 
+                    <div className="loader">
+                        <h2>Loading...</h2>
+                    </div>
+                }
             </div>
             </div>
         );
